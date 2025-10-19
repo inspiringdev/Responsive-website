@@ -1,4 +1,4 @@
-/* --- 1. Global Setup & Variables --- */
+
 :root {
     --primary-color: #005A9C;
     --primary-color-dark: #004070;
@@ -30,7 +30,6 @@ body {
     padding: 1.5rem;
 }
 
-/* --- 2. Typography & Header --- */
 h1 {
     text-align: center;
     margin-bottom: 2rem;
@@ -47,7 +46,6 @@ a:hover {
     text-decoration: underline;
 }
 
-/* --- 3. Main Layout & Form Container --- */
 main {
     max-width: 1000px;
     margin: 0 auto;
@@ -64,7 +62,6 @@ main {
     padding: 2rem 2.5rem;
 }
 
-/* --- 4. Form Groups & Labels --- */
 .form-group {
     display: flex;
     flex-direction: column;
@@ -95,7 +92,6 @@ label {
     margin-top: -0.25rem;
 }
 
-/* --- 5. Standard Form Inputs --- */
 input[type="text"],
 input[type="email"],
 input[type="tel"],
@@ -119,7 +115,6 @@ textarea {
     min-height: 80px;
 }
 
-/* --- 6. Focus & Validation States --- */
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
@@ -136,7 +131,6 @@ input:invalid:not(:placeholder-shown):focus-visible {
     box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.25);
 }
 
-/* --- 7. Fieldsets & Legends --- */
 fieldset {
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
@@ -160,7 +154,6 @@ legend {
     margin-top: 0.5rem;
 }
 
-/* --- 8. Custom Radio & Checkbox --- */
 .radio-item,
 .checkbox-item {
     display: flex;
@@ -186,7 +179,6 @@ input[type="checkbox"] {
     width: 0;
 }
 
-/* Custom visual element */
 .radio-item label::before,
 .checkbox-item label::before {
     content: '';
@@ -201,24 +193,20 @@ input[type="checkbox"] {
     transition: all 0.2s ease;
 }
 
-/* Radio specific style (circle) */
 .radio-item label::before {
     border-radius: 50%;
 }
 
-/* Checkbox specific style (square) */
 .checkbox-item label::before {
     border-radius: 4px;
 }
 
-/* Focus state for custom controls */
 input[type="radio"]:focus-visible + label::before,
 input[type="checkbox"]:focus-visible + label::before {
     box-shadow: var(--shadow-focus);
     border-color: var(--accent-color);
 }
 
-/* Checked state - dot for radio */
 .radio-item input:checked + label::before {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
@@ -241,7 +229,6 @@ input[type="checkbox"]:focus-visible + label::before {
     display: block;
 }
 
-/* Checked state - checkmark for checkbox */
 .checkbox-item input:checked + label::before {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
@@ -265,7 +252,6 @@ input[type="checkbox"]:focus-visible + label::before {
 }
 
 
-/* --- 9. File Input --- */
 input[type="file"] {
     padding: 0;
     border: none;
@@ -291,7 +277,6 @@ input[type="file"]::file-selector-button:hover {
     border-color: var(--primary-color);
 }
 
-/* --- 10. Buttons --- */
 .form-buttons {
     display: flex;
     flex-direction: column-reverse;
@@ -335,7 +320,6 @@ button[type="reset"] {
     transform: translateY(-2px);
 }
 
-/* --- 11. Responsive Layout --- */
 @media (min-width: 768px) {
     body {
         padding: 2.5rem;
@@ -365,7 +349,7 @@ button[type="reset"] {
         min-width: 120px;
     }
 }
-/* --- 12. Terms & Conditions Box --- */
+
 .terms-box {
     max-height: 150px;
     overflow-y: auto;
