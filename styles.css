@@ -1,0 +1,386 @@
+/* --- 1. Global Setup & Variables --- */
+:root {
+    --primary-color: #005A9C;
+    --primary-color-dark: #004070;
+    --accent-color: #007BFF;
+    --bg-color: #f0f4f8;
+    --card-color: #ffffff;
+    --text-color: #333;
+    --label-color: #555;
+    --border-color: #dbe2e9;
+    --border-radius: 8px;
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --shadow-focus: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    --font-main: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 1.5rem;
+}
+
+/* --- 2. Typography & Header --- */
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary-color-dark);
+    font-weight: 700;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* --- 3. Main Layout & Form Container --- */
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: var(--card-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    overflow: hidden;
+}
+
+#registration-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem 1.75rem;
+    padding: 2rem 2.5rem;
+}
+
+/* --- 4. Form Groups & Labels --- */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.name-group {
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.form-subgroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+label {
+    font-weight: 600;
+    color: var(--label-color);
+    font-size: 0.9rem;
+}
+
+.form-hint {
+    font-size: 0.8rem;
+    color: #777;
+    margin-top: -0.25rem;
+}
+
+/* --- 5. Standard Form Inputs --- */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="password"],
+select,
+textarea,
+input[list] {
+    width: 100%;
+    padding: 0.75rem;
+    font-family: var(--font-main);
+    font-size: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: #fff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* --- 6. Focus & Validation States --- */
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: var(--shadow-focus);
+}
+
+input:invalid:not(:placeholder-shown) {
+    border-color: #e74c3c;
+}
+
+input:invalid:not(:placeholder-shown):focus-visible {
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.25);
+}
+
+/* --- 7. Fieldsets & Legends --- */
+fieldset {
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 1.25rem;
+    margin-top: 0.5rem;
+}
+
+legend {
+    font-weight: 600;
+    color: var(--primary-color);
+    padding: 0 0.5rem;
+    margin-left: 0.5rem;
+    font-size: 1rem;
+}
+
+.radio-group,
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+/* --- 8. Custom Radio & Checkbox --- */
+.radio-item,
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.radio-item label,
+.checkbox-item label {
+    padding-left: 2rem;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.95rem;
+    user-select: none;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Custom visual element */
+.radio-item label::before,
+.checkbox-item label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 1.25rem;
+    width: 1.25rem;
+    border: 2px solid var(--border-color);
+    background-color: #fff;
+    transition: all 0.2s ease;
+}
+
+/* Radio specific style (circle) */
+.radio-item label::before {
+    border-radius: 50%;
+}
+
+/* Checkbox specific style (square) */
+.checkbox-item label::before {
+    border-radius: 4px;
+}
+
+/* Focus state for custom controls */
+input[type="radio"]:focus-visible + label::before,
+input[type="checkbox"]:focus-visible + label::before {
+    box-shadow: var(--shadow-focus);
+    border-color: var(--accent-color);
+}
+
+/* Checked state - dot for radio */
+.radio-item input:checked + label::before {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.radio-item label::after {
+    content: '';
+    position: absolute;
+    display: none;
+    left: 0.4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 50%;
+    background: white;
+}
+
+.radio-item input:checked + label::after {
+    display: block;
+}
+
+/* Checked state - checkmark for checkbox */
+.checkbox-item input:checked + label::before {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.checkbox-item label::after {
+    content: '';
+    position: absolute;
+    display: none;
+    left: 0.4rem;
+    top: 0.2rem;
+    width: 0.35rem;
+    height: 0.75rem;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+.checkbox-item input:checked + label::after {
+    display: block;
+}
+
+
+/* --- 9. File Input --- */
+input[type="file"] {
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+input[type="file"]::file-selector-button {
+    font-family: var(--font-main);
+    font-weight: 600;
+    color: var(--primary-color);
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    padding: 0.7rem 1.2rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    margin-right: 1rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* --- 10. Buttons --- */
+.form-buttons {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 0.75rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.5rem;
+    margin-top: 1rem;
+}
+
+button[type="submit"],
+button[type="reset"] {
+    width: 100%;
+    padding: 0.85rem 1.5rem;
+    font-family: var(--font-main);
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-submit {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-submit:hover {
+    background-color: var(--primary-color-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-light);
+}
+
+.btn-reset {
+    background-color: #e9ecef;
+    color: #495057;
+}
+
+.btn-reset:hover {
+    background-color: #ced4da;
+    transform: translateY(-2px);
+}
+
+/* --- 11. Responsive Layout --- */
+@media (min-width: 768px) {
+    body {
+        padding: 2.5rem;
+    }
+
+    #registration-form {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .name-group {
+        flex-direction: row;
+        gap: 1.75rem;
+    }
+    
+    .span-two {
+        grid-column: 1 / -1;
+    }
+
+    .form-buttons {
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    button[type="submit"],
+    button[type="reset"] {
+        width: auto;
+        min-width: 120px;
+    }
+}
+/* --- 12. Terms & Conditions Box --- */
+.terms-box {
+    max-height: 150px;
+    overflow-y: auto;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    background-color: var(--bg-color);
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+.terms-box p {
+    margin-bottom: 1rem;
+}
+
+.terms-box p:last-child {
+    margin-bottom: 0;
+}

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Student Registration Form</h1>
+    </header>
+
+    <main>
+        <form id="registration-form" action="#" method="post" novalidate>
+
+            <div class="form-group name-group">
+                <div class="form-subgroup">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" name="first_name" required>
+                </div>
+                <div class="form-subgroup">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" name="last_name" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="student-id">Qalam ID</label>
+                <input type="text" id="student-id" name="student_id" pattern="[a-zA-Z0-9-]+" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cnic">CNIC / B-Form Number</label>
+                <input type="text" id="cnic" name="cnic" pattern="\d{5}-\d{7}-\d{1}" placeholder="XXXXX-XXXXXXX-X" required>
+                <p class="form-hint">For applicants under 18, please use your B-Form number.</p>
+            </div>
+
+            <fieldset class="form-group span-two">
+                <legend>Gender</legend>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" id="gender-male" name="gender" value="male" required>
+                        <label for="gender-male">Male</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="gender-female" name="gender" value="female">
+                        <label for="gender-female">Female</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="gender-other" name="gender" value="other">
+                        <label for="gender-other">Other</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="gender-none" name="gender" value="prefer_not_to_say">
+                        <label for="gender-none">Prefer not to say</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="form-group">
+                <label for="email">Contact Email</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Contact Phone</label>
+                <input type="tel" id="phone" name="phone" placeholder="e.g., +92 770 9000000">
+            </div>
+
+
+            <div class="form-group">
+                <label for="program">Program / Department</label>
+                <select id="program" name="program" required>
+                    <option value="" disabled selected>Select your program...</option>
+                    <optgroup label="School of Electrical Engineering and Computer Science">
+                        <option value="cs">Computer Science</option>
+                        <option value="ee">Electrical Engineering</option>
+                        <option value="me">Mechanical Engineering</option>
+                        <option value="ds">Data Science</option>
+                        <option value="ai">Artifical Intelligence</option>
+                        <option value="ce">Computer Engineering</option>
+                        <option value="cbs">Cyber Security</option>
+                    </optgroup>
+                    <optgroup label="Nust Balochistan Campus">
+                        <option value="cs">Computer Science</option>
+                        <option value="ee">Civil Engineering</option>
+                        <option value="ai">Artificial Intelligence</option>
+                    </optgroup>
+                    <optgroup label="School of Design and Architecture">
+                        <option value="ind">Industrial Design</option>
+                        <option value="arch">Architecture</option>
+                    </optgroup>
+                    <optgroup label="College of Aeronautical Engineering">
+                        <option value="ee">Electrical Engineering</option>
+                        <option value="me">Mechanical Engineering</option>
+                        <option value="ae">Aeronautical Engineering</option>
+                    </optgroup>
+                    <optgroup label="Nust Business School">
+                        <option value="fin">Finance</option>
+                        <option value="ba">Business Administration</option>
+                        <option value="co">Commerce</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="semester">Year / Semester</label>
+                <select id="semester" name="semester" required>
+                    <option value="" disabled selected>Select your current semester...</option>
+                    <option value="y1s1">Year 1, Semester 1</option>
+                    <option value="y1s2">Year 1, Semester 2</option>
+                    <option value="y2s1">Year 2, Semester 3</option>
+                    <option value="y2s2">Year 2, Semester 4</option>
+                    <option value="y3s1">Year 3, Semester 5</option>
+                    <option value="y3s2">Year 3, Semester 6</option>
+                    <option value="y4s1">Year 4, Semester 7</option>
+                    <option value="y4s2">Year 4, Semester 8</option>
+                </select>
+            </div>
+
+            <div class="form-group span-two">
+                <label for="address">Address</label>
+                <textarea id="address" name="address" rows="4"></textarea>
+            </div>
+
+            <fieldset class="form-group">
+                <legend>Enrollment Type</legend>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" id="full-time" name="enrollment_type" value="full-time" required>
+                        <label for="full-time">Full-time</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="part-time" name="enrollment_type" value="part-time">
+                        <label for="part-time">Part-time</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="form-group">
+                <legend>Student Status</legend>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" id="status-new" name="student_status" value="new" required>
+                        <label for="status-new">New Student</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="status-returning" name="student_status" value="returning">
+                        <label for="status-returning">Returning Student</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="status-transfer" name="student_status" value="transfer">
+                        <label for="status-transfer">Transfer Student</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="form-group">
+                <legend>Courses to Register</legend>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="course-cs101" name="courses" value="cs101">
+                        <label for="course-cs101">CS101: Intro to Programming</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="course-math105" name="courses" value="math105">
+                        <label for="course-math105">MATH105: Calculus I</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="course-phys101" name="courses" value="phys101">
+                        <label for="course-phys101">PHYS101: General Physics</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="course-eng100" name="courses" value="eng100">
+                        <label for="course-eng100">ENG100: Expository Writing</label>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset class="form-group">
+                <legend>Extracurricular Interests</legend>
+                <p class="form-hint">Select all activities you are interested in joining.</p>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="interest-sports" name="interests" value="sports">
+                        <label for="interest-sports">Sports/Athletics</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="interest-media" name="interests" value="media">
+                        <label for="interest-media">Media & Publications</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="interest-tech" name="interests" value="tech">
+                        <label for="interest-tech">Tech & Coding Clubs</label>
+                    </div>
+      
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="interest-volunteer" name="interests" value="volunteer">
+                        <label for="interest-volunteer">Social Work</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="form-group">
+                <label for="campus">Preferred Campus</label>
+                <input type="text" id="campus" name="campus" list="campus-list" placeholder="Select a campus">
+                <datalist id="campus-list">
+                    <option value="H12 Campus, Islamabad"></option>
+                    <option value="CAE, Risalpur"></option>
+                    <option value="CEME, Rawalpindi"></option>
+                    <option value="NBC, Quetta"></option>
+
+                </datalist>
+            </div>
+
+            <div class="form-group">
+                <label for="photo">Profile Photo</label>
+                <input type="file" id="photo" name="photo" accept="image/png, image/jpeg, image/webp">
+                <p id="photo-hint" class="form-hint">Accepts .png, .jpeg, or .webp files.</p>
+            </div>
+
+            <fieldset class="form-group span-two">
+                <legend>Create Your Password</legend>
+                <div class="form-group name-group">
+                    <div class="form-subgroup">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required 
+                               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                               aria-describedby="password-hint">
+                        <p id="password-hint" class="form-hint">Must be 8+ characters, with uppercase, lowercase, and a number.</p>
+                    </div>
+                    <div class="form-subgroup">
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" id="confirm-password" name="confirm_password" required>
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="form-group span-two">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to the <a href="#">Terms and Conditions</a></label>
+                </div>
+            </div>
+
+            <div class="form-buttons span-two">
+                <button type="reset" class="btn-reset">Reset</button>
+                <button type="submit" class="btn-submit">Register</button>
+            </div>
+
+        </form>
+    </main>
+
+</body>
+</html>
