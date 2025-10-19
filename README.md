@@ -14,12 +14,10 @@ Open the index.html file in any web browser.
 What I Did (Features & Approach)
 I focused on hitting all the requirements, especially accessibility and responsive design.
 
-Semantic HTML: I used <main>, <form>, <fieldset>, and <legend> to give the page a logical structure. I avoided using <div> for everything.
-
 
 All Form Controls: I made sure to use all the required inputs:
 
-text, date, email, tel, password, radio and checkbox, select with <optgroup>,textarea, file, and datalist
+text, date, email, tel, password, radio and checkbox, select with <optgroup>,textarea, file, and datalist.
 
 
 Responsive Layout: The design is mobile-first.
@@ -33,7 +31,6 @@ Accessibility:
 
 Every single input is connected to a <label> with for and id.
 
-Related fields (like 'Gender') are grouped in a <fieldset>.
 
 The whole form works perfectly with keyboard navigation. I added a clear :focus-visible style for all inputs, including the custom radio/checkboxes.
 
